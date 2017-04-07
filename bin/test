@@ -1,0 +1,1 @@
+TEST_BROWSER_DRIVER=nightmare meteor test --once --driver-package dispatch:mocha

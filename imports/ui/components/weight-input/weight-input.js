@@ -1,1 +1,0 @@
-import './weight-input.html'

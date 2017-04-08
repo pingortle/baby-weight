@@ -3,22 +3,16 @@ import './weight-input.html'
 Template.weightInput.viewmodel({
   value: 0,
   hasFocus: false,
-  valueChanged: function () {
-    const gramValue = this.value() / this.gramFactor()
-    this.parent().gramValue(gramValue)
+  gramValue: function () {
+    return this.value() / this.gramFactor()
   },
   autorun: [
     function () {
-      if (this.hasFocus()) {
-        this.parent().focusedInput(this.vmId)
-      }
-    },
-    function () {
-      const gramValue = this.value() / this.gramFactor()
+      const gramValue = this.gramValue()
       this.parent().gramValue(gramValue)
     },
     function () {
-      if (this.parent().focusedInput() !== this.vmId) {
+      if (!this.hasFocus()) {
         const value = this.parent().gramValue() * this.gramFactor()
         this.value(value)
       }

@@ -2,6 +2,5 @@ import './weight-input'
 import './weight-converter.html'
 
 Template.weightConverter.viewmodel({
-  gramValue: 0,
-  focusedInput: null
+  gramValue: 0
 })

@@ -29,9 +29,14 @@ Template.poundOunceInput.viewmodel({
     },
     function () {
       const ounces = this.ounceValue()
-      if(ounces >= OUNCES_IN_POUND) {
+      if (ounces >= OUNCES_IN_POUND) {
         this.ounceValue(ounces % OUNCES_IN_POUND)
         this.poundValue(this.poundValue.value + 1)
+      }
+
+      if (ounces < 0) {
+        this.ounceValue(OUNCES_IN_POUND - 1)
+        this.poundValue(this.poundValue.value - 1)
       }
     }
   ]

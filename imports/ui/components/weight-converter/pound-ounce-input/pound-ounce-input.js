@@ -16,7 +16,7 @@ Template.poundOunceInput.viewmodel({
     function () {
       const gramValue = this.poundValue() / POUND_FACTOR + this.ounceValue() / OUNCE_FACTOR
       console.log(`poundOunceInput - setting parent gramValue: ${gramValue}`)
-      this.parent().gramValue(gramValue)
+      this.parent().gramValue(Math.round(gramValue))
     },
     function () {
       const gramValue = this.parent().gramValue()

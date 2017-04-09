@@ -1,3 +1,4 @@
 <template name="poundOunceInput">
-  {{> weightInput gramFactor=0.00220462 ref='poundInput'}} lbs {{> weightInput gramFactor=0.035274 ref='ounceInput'}} oz
+  <input type="number" step="any" {{b "value: poundValue, focus: poundInputHasFocus" }} /> lbs
+  <input type="number" step="any" {{b "value: ounceValue, focus: ounceInputHasFocus" }} /> oz
 </template>

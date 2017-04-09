@@ -15,18 +15,15 @@ Template.poundOunceInput.viewmodel({
   autorun: [
     function () {
       const gramValue = this.poundValue() / POUND_FACTOR + this.ounceValue() / OUNCE_FACTOR
-      console.log(`poundOunceInput - setting parent gramValue: ${gramValue}`)
       this.parent().gramValue(Math.round(gramValue))
     },
     function () {
       const gramValue = this.parent().gramValue()
       if (!this.hasFocus()) {
         const pounds = Math.floor(gramValue * POUND_FACTOR)
-        console.log(`poundOunceInput - setting pounds: ${pounds}`)
         this.poundValue(pounds)
 
         const ounces = Math.round(gramValue * OUNCE_FACTOR) % OUNCES_IN_POUND
-        console.log(`poundOunceInput - setting ounces: ${ounces}`)
         this.ounceValue(ounces)
       }
     },

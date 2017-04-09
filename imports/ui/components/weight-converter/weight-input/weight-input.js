@@ -3,7 +3,7 @@ import './weight-input.html'
 Template.weightInput.viewmodel({
   value: 0,
   gramValue: function (grams) {
-    if (_.isUndefined(grams)) {
+    if (arguments.length === 0) {
       return this.value() / this.gramFactor()
     } else {
       this.value(grams * this.gramFactor())

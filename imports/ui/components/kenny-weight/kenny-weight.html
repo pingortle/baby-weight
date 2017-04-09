@@ -1,0 +1,8 @@
+<template name="kennyWeight">
+  <h2>
+    Current weight: <input type="number" step="any" {{b "value: grams, enter: gramsChanged"}} /> grams
+    <button class="btn btn-md" {{b "click: convertWeight"}}>Convert</button>
+    <br />
+    <small {{b "if: updatedAt"}}>Last updated: {{updatedAt}}</small>
+  </h2>
+</template>

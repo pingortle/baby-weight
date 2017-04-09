@@ -16,6 +16,6 @@ Template.weightInput.viewmodel({
         const value = this.parent().gramValue() * this.gramFactor()
         this.value(value)
       }
-    },
+    }
   ]
 })

@@ -23,8 +23,8 @@ Template.poundOunceInput.viewmodel({
         const pounds = Math.floor(gramValue * POUND_FACTOR)
         this.poundValue(pounds)
 
-        const ounces = Math.round(gramValue * OUNCE_FACTOR) % OUNCES_IN_POUND
-        this.ounceValue(ounces)
+        const ounces = (gramValue * OUNCE_FACTOR) % OUNCES_IN_POUND
+        this.ounceValue(Math.round(ounces * 10) / 10)
       }
     },
     function () {

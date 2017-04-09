@@ -18,8 +18,9 @@ Template.weightInput.viewmodel({
       this.parent().gramValue(gramValue)
     },
     function () {
-      if (!this.hasFocus()) {
-        const value = this.parent().gramValue() * this.gramFactor()
+      const gramValue = this.parent().gramValue()
+      if (!this.hasFocus.value) {
+        const value = gramValue * this.gramFactor()
         console.log(`weightInput - setting value: ${value}`)
         this.value(value)
       }
